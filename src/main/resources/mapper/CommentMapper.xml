@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.formeky.zcwblog.mapper.CommentMapper">
+  <resultMap id="BaseResultMap" type="xyz.formeky.zcwblog.domain.Comment">
+    <!--@mbg.generated-->
+    <!--@Table `comment`-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="essay_id" jdbcType="INTEGER" property="essayId" />
+    <result column="del" jdbcType="BIT" property="del" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, content, create_time, essay_id, del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from `comment`
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from `comment`
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="xyz.formeky.zcwblog.domain.Comment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `comment` (content, create_time, essay_id, 
+      del)
+    values (#{content,jdbcType=LONGVARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{essayId,jdbcType=INTEGER}, 
+      #{del,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="xyz.formeky.zcwblog.domain.Comment" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into `comment`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="content != null">
+        content,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="essayId != null">
+        essay_id,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="essayId != null">
+        #{essayId,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="xyz.formeky.zcwblog.domain.Comment">
+    <!--@mbg.generated-->
+    update `comment`
+    <set>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="essayId != null">
+        essay_id = #{essayId,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="xyz.formeky.zcwblog.domain.Comment">
+    <!--@mbg.generated-->
+    update `comment`
+    set content = #{content,jdbcType=LONGVARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      essay_id = #{essayId,jdbcType=INTEGER},
+      del = #{del,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
