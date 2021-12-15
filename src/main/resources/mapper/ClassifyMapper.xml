@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="xyz.formeky.zcwblog.mapper.ClassifyMapper">
-  <resultMap id="BaseResultMap" type="xyz.formeky.zcwblog.domain.Classify">
+  <resultMap id="BaseResultMap" type="xyz.formeky.zcwblog.pojo.entity.Classify">
     <!--@mbg.generated-->
     <!--@Table classify-->
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -23,12 +23,12 @@
     delete from classify
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="xyz.formeky.zcwblog.domain.Classify">
+  <insert id="insert" parameterType="xyz.formeky.zcwblog.pojo.entity.Classify">
     <!--@mbg.generated-->
     insert into classify (id, classify)
     values (#{id,jdbcType=INTEGER}, #{classify,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="xyz.formeky.zcwblog.domain.Classify">
+  <insert id="insertSelective" parameterType="xyz.formeky.zcwblog.pojo.entity.Classify">
     <!--@mbg.generated-->
     insert into classify
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -48,7 +48,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="xyz.formeky.zcwblog.domain.Classify">
+  <update id="updateByPrimaryKeySelective" parameterType="xyz.formeky.zcwblog.pojo.entity.Classify">
     <!--@mbg.generated-->
     update classify
     <set>
@@ -58,7 +58,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="xyz.formeky.zcwblog.domain.Classify">
+  <update id="updateByPrimaryKey" parameterType="xyz.formeky.zcwblog.pojo.entity.Classify">
     <!--@mbg.generated-->
     update classify
     set classify = #{classify,jdbcType=VARCHAR}

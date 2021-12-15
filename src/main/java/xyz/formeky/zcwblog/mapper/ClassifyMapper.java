@@ -1,7 +1,7 @@
 package xyz.formeky.zcwblog.mapper;
 
 import org.springframework.stereotype.Repository;
-import xyz.formeky.zcwblog.domain.Classify;
+import xyz.formeky.zcwblog.pojo.entity.Classify;
 
 /**
  * @author zcw

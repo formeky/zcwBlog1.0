@@ -1,7 +1,8 @@
-package xyz.formeky.zcwblog.domain;
+package xyz.formeky.zcwblog.pojo.entity;
+
+import lombok.Data;
 
 import java.util.Date;
-import lombok.Data;
 
 /**
  * @author zcw

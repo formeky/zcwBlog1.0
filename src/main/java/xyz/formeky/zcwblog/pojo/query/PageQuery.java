@@ -1,4 +1,4 @@
-package xyz.formeky.zcwblog.pojo.vo;
+package xyz.formeky.zcwblog.pojo.query;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

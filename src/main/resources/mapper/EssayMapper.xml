@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="xyz.formeky.zcwblog.mapper.EssayMapper">
-  <resultMap id="BaseResultMap" type="xyz.formeky.zcwblog.domain.Essay">
+  <resultMap id="BaseResultMap" type="xyz.formeky.zcwblog.pojo.entity.Essay">
     <!--@mbg.generated-->
     <!--@Table essay-->
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -30,7 +30,7 @@
     delete from essay
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="xyz.formeky.zcwblog.domain.Essay">
+  <insert id="insert" parameterType="xyz.formeky.zcwblog.pojo.entity.Essay">
     <!--@mbg.generated-->
     insert into essay (id, title, brief_introduction, 
       content, author, tag_ids, 
@@ -41,7 +41,7 @@
       #{classifyIds,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, #{del,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="xyz.formeky.zcwblog.domain.Essay">
+  <insert id="insertSelective" parameterType="xyz.formeky.zcwblog.pojo.entity.Essay">
     <!--@mbg.generated-->
     insert into essay
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -103,7 +103,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="xyz.formeky.zcwblog.domain.Essay">
+  <update id="updateByPrimaryKeySelective" parameterType="xyz.formeky.zcwblog.pojo.entity.Essay">
     <!--@mbg.generated-->
     update essay
     <set>
@@ -134,7 +134,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="xyz.formeky.zcwblog.domain.Essay">
+  <update id="updateByPrimaryKey" parameterType="xyz.formeky.zcwblog.pojo.entity.Essay">
     <!--@mbg.generated-->
     update essay
     set title = #{title,jdbcType=VARCHAR},

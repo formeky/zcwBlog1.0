@@ -1,7 +1,7 @@
 package xyz.formeky.zcwblog.mapper;
 
 import org.springframework.stereotype.Repository;
-import xyz.formeky.zcwblog.domain.User;
+import xyz.formeky.zcwblog.pojo.entity.User;
 
 /**
  * @author zcw
@@ -15,6 +15,8 @@ public interface UserMapper {
     int insertSelective(User record);
 
     User selectByPrimaryKey(Integer id);
+
+    User selectUserByUsername(String username);
 
     int updateByPrimaryKeySelective(User record);
 

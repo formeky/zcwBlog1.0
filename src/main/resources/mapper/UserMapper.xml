@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="xyz.formeky.zcwblog.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="xyz.formeky.zcwblog.domain.User">
+  <resultMap id="BaseResultMap" type="xyz.formeky.zcwblog.pojo.entity.User">
     <!--@mbg.generated-->
     <!--@Table `user`-->
     <id column="id" jdbcType="INTEGER" property="id" />
@@ -26,14 +26,14 @@
     delete from `user`
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="xyz.formeky.zcwblog.domain.User" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="xyz.formeky.zcwblog.pojo.entity.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into `user` (username, `password`, nickname, 
       del)
     values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
       #{del,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="xyz.formeky.zcwblog.domain.User" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="xyz.formeky.zcwblog.pojo.entity.User" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into `user`
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -65,7 +65,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="xyz.formeky.zcwblog.domain.User">
+  <update id="updateByPrimaryKeySelective" parameterType="xyz.formeky.zcwblog.pojo.entity.User">
     <!--@mbg.generated-->
     update `user`
     <set>
@@ -84,7 +84,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="xyz.formeky.zcwblog.domain.User">
+  <update id="updateByPrimaryKey" parameterType="xyz.formeky.zcwblog.pojo.entity.User">
     <!--@mbg.generated-->
     update `user`
     set username = #{username,jdbcType=VARCHAR},
@@ -93,4 +93,12 @@
       del = #{del,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectUserByUsername" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from `user`
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
 </mapper>
