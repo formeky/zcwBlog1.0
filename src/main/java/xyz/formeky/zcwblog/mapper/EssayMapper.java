@@ -2,6 +2,9 @@ package xyz.formeky.zcwblog.mapper;
 
 import org.springframework.stereotype.Repository;
 import xyz.formeky.zcwblog.pojo.entity.Essay;
+import xyz.formeky.zcwblog.pojo.query.EssayQuery;
+
+import java.util.List;
 
 /**
  * @author zcw
@@ -19,4 +22,6 @@ public interface EssayMapper {
     int updateByPrimaryKeySelective(Essay record);
 
     int updateByPrimaryKey(Essay record);
+
+    List<Essay> listEssay(EssayQuery query);
 }

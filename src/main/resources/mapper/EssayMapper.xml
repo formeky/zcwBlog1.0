@@ -18,12 +18,28 @@
     <!--@mbg.generated-->
     id, title, brief_introduction, content, author, tag_ids, classify_ids, `date`, del
   </sql>
+  <sql id="Sample_List">
+    <!--@mbg.generated-->
+    id, title, brief_introduction, tag_ids, classify_ids, `date`
+  </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select 
     <include refid="Base_Column_List" />
     from essay
     where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="listEssay" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Sample_List" />
+    from essay
+    <where>
+      <if test="title != null and title != ''">
+        title like concat('%',#{title,jdbcType=VARCHAR},'%')
+      </if>
+    </where>
+    limit #{start,jdbcType=INTEGER} , #{rows,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
@@ -147,4 +163,6 @@
       del = #{del,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
 </mapper>
