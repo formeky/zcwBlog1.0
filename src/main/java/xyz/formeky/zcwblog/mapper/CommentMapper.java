@@ -2,6 +2,10 @@ package xyz.formeky.zcwblog.mapper;
 
 import org.springframework.stereotype.Repository;
 import xyz.formeky.zcwblog.pojo.entity.Comment;
+import xyz.formeky.zcwblog.pojo.query.CommentQuery;
+import xyz.formeky.zcwblog.pojo.query.PageQuery;
+
+import java.util.List;
 
 /**
  * @author zcw
@@ -19,4 +23,6 @@ public interface CommentMapper {
     int updateByPrimaryKeySelective(Comment record);
 
     int updateByPrimaryKey(Comment record);
+
+    List<Comment> listComment(CommentQuery query);
 }

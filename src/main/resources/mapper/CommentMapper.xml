@@ -93,4 +93,17 @@
       del = #{del,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="listComment" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from comment
+    <where>
+      <if test="essayId != null">
+        id = #{essayId,jdbcType=INTEGER}
+      </if>
+    </where>
+    limit #{start,jdbcType=INTEGER} , #{rows,jdbcType=INTEGER}
+    </select>
 </mapper>
