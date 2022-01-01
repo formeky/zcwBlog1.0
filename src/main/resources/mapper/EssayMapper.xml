@@ -41,6 +41,12 @@
     </where>
     limit #{start,jdbcType=INTEGER} , #{rows,jdbcType=INTEGER}
   </select>
+  <select id="archive" resultType="xyz.formeky.zcwblog.pojo.entity.Essay">
+    <!--@mbg.generated-->
+    select
+    <include refid="Sample_List" />
+    from essay
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
     delete from essay
@@ -163,6 +169,5 @@
       del = #{del,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
-
 
 </mapper>

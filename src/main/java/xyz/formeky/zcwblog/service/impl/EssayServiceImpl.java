@@ -61,4 +61,9 @@ public class EssayServiceImpl implements EssayService {
         mapper.updateByPrimaryKeySelective(essay);
         return true;
     }
+
+    @Override
+    public List<Essay> archive() {
+        return mapper.archive();
+    }
 }

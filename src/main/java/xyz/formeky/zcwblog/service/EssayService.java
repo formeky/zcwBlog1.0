@@ -19,4 +19,6 @@ public interface EssayService {
     public Boolean saveEssay(Essay essay);
 
     public Boolean update(Essay essay);
+
+    public List<Essay> archive();
 }

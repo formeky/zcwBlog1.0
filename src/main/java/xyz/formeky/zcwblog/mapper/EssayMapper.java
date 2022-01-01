@@ -24,4 +24,6 @@ public interface EssayMapper {
     int updateByPrimaryKey(Essay record);
 
     List<Essay> listEssay(EssayQuery query);
+
+    List<Essay> archive();
 }

@@ -3,6 +3,8 @@ package xyz.formeky.zcwblog.mapper;
 import org.springframework.stereotype.Repository;
 import xyz.formeky.zcwblog.pojo.entity.Tag;
 
+import java.util.List;
+
 /**
  * @author zcw
  */
@@ -19,4 +21,6 @@ public interface TagMapper {
     int updateByPrimaryKeySelective(Tag record);
 
     int updateByPrimaryKey(Tag record);
+
+    List<Tag> listTag();
 }

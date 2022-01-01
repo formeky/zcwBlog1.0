@@ -18,6 +18,12 @@
     from tag
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="listTag" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from tag
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
     delete from tag
@@ -64,4 +70,6 @@
     set tag = #{tag,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
 </mapper>

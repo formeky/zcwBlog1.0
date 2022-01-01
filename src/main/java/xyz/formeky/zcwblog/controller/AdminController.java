@@ -8,7 +8,6 @@ import xyz.formeky.zcwblog.pojo.entity.Essay;
 import xyz.formeky.zcwblog.pojo.entity.User;
 import xyz.formeky.zcwblog.pojo.enums.StatusEnum;
 import xyz.formeky.zcwblog.pojo.query.EssayQuery;
-import xyz.formeky.zcwblog.pojo.query.PageQuery;
 import xyz.formeky.zcwblog.pojo.vo.BaseVo;
 import xyz.formeky.zcwblog.service.AdminService;
 import xyz.formeky.zcwblog.service.EssayService;
